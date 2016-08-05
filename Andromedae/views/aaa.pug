@@ -1,0 +1,41 @@
+doctype html
+html
+    head
+        title 数据测试页面
+        script(src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js")
+        script.
+            $(function(){
+                var name = $(".name").text();
+                var password = $(".password").text();
+                $(".button").click(function(){
+                    $.ajax({
+                        type: "GET",
+                        url: "/aaa",
+                        dataType: "text",
+                        //传送请求数据
+                        data : {name:name,password:password},
+                        success: function (msg) { //登录成功后返回的数据
+                            //根据返回值进行状态显示
+                                console.log(msg)
+
+                        },
+                        error:function(){
+                            alert("error")
+                        }
+                    })
+                })
+            })
+
+    body
+        h1 请求数据
+        form(action="/aaa",method="get")
+            label 姓名：
+                span.name #{name}
+            label 密码：
+                span.password #{password}
+            button.button 请求数据
+        label ggg
+
+
+
+

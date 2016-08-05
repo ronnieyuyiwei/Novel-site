@@ -1,0 +1,32 @@
+extends layout
+block content
+    script.
+        $(function () {
+            $(".button").click(function () {
+                jquery
+
+                var name =getElementsByClassName("xxx").val();
+                var name = $(".xxx").val();
+                var password = $(".password").val();
+                $.ajax({
+                    type: "POST",
+                    url: "/register", //登录处理页
+                    dataType: "text",
+                    //传送请求数据
+                    data: {name: name, password: password},
+                    success: function (msg) { //登录成功后返回的数据
+                        console.log(msg)
+                    },
+                    error: function (err) {
+                        console.log("ERROR!"+err)
+                    }
+
+                })
+            })
+        })
+    p Register
+    label 用户名
+        input.xxx
+    label 密码
+        input.password
+    button.button
