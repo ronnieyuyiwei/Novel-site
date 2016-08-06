@@ -1,9 +1,0 @@
-<component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="bin\www" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" path-to-js-file="$PROJECT_DIR$/../Andromedae/bin/www" working-dir="$PROJECT_DIR$/../Andromedae">
-    <envs>
-      <env name="DEBUG" value="untitled:*" />
-    </envs>
-    <browser url="http://localhost:3000/" />
-    <method />
-  </configuration>
-</component>
