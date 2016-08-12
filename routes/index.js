@@ -30,13 +30,20 @@ router.post('/test', function (req, res, next) {
   });
 });
 router.get('/register', function(req, res, next) {
-  user.getvalue(function(msg){
-
-    if(msg){
-      res.send("success");
-    }else{
-      res.send('fail')
-    }
-  })
+  // user.getvalue(function(msg){
+  //
+  //   if(msg){
+  //     res.send("success");
+  //   }else{
+  //     res.send('fail')
+  //   }
+  // })
+  res.render('register',{})
 });
+router.post('/register',function (req, res) {
+  console.log("return"+req.body.Sa);
+  console.log("return"+req.body.Sb);
+  var abc = "wert"
+  res.send(abc)
+})
 module.exports = router;
