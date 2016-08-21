@@ -4,7 +4,7 @@ var dbop = require('../dao/dbConnect');
 var session = require('express-session');
 var user = require('../dao/user');
 /* GET home page. */
-router.use(session({ secret: 'keyboard cat', cookie: { maxAge: 60000 }}));
+
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express',name:"6" });
 });
@@ -38,7 +38,11 @@ router.get('/register', function(req, res, next) {
   //     res.send('fail')
   //   }
   // })
-  res.render('register',{})
+  // res.render('register',{})
+  res.links({
+    next: 'http://www.baidu.com',
+    last: 'http://github.com/ronnieyuyiwei'
+  });
 });
 router.post('/register',function (req, res) {
   console.log("return"+req.body.Sa);

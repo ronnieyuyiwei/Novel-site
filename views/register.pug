@@ -4,7 +4,7 @@ block head
     script(src="javascripts/vue-resource.js")
 block content
     p Register
-    #form
+    //#form
         label 用户名
             input(v-model="name").xxx
             p {{name}}
@@ -12,8 +12,10 @@ block content
             input(v-model="password").password
             p {{password}}
         button(v-on:click='greet') 提交
-
-    script.
+    //#example
+        div {{msg}}
+    #div(v-demo.literal="foo bar baz") 878789
+    //script.
         var demo = new Vue({
             el: '#form',
             data: {
@@ -30,5 +32,15 @@ block content
                         alert(response.text());
                     })
                 }
+            }
+        })
+    script.
+        Vue.directive('demo', function (value) {
+            console.log(value) // "foo bar baz"
+        })
+        var vm = new Vue({
+            el:"#div",
+            data:{
+                
             }
         })
