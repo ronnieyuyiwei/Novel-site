@@ -15,33 +15,23 @@ var user = require('./dao/user');
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/tianhe');
+mongoose.connect('mongodb://localhost/tianhe')
 var db = mongoose.connection;
 db.on('error',console.error.bind(console,"连接错误"))
-db.once('open',function(){
-    //一次打开记录
-    console.log("Once opened!");
-    var kittySchema = mongoose.Schema({
-        name:String
-    });
-    kittySchema.methods.speak = function () {
-        var greeting = this.name ? "Memo name is " + this.name : "Memo do not have a name";
-        console.log(greeting);
-    };
-    var Kittenabc  = mongoose.model('Kittenabc',kittySchema);
-    var silence =  new Kittenabc({name:"Silence"});
-    console.log(silence.name); //Silence;
-    var fluffy = new Kittenabc({name:'fluffy'});
+db.once('open',function () {
+    console.log("一次成功的打开")
+    var Schema = mongoose.Schema;
+    var personschema = new Schema({
+        name:String,
+        num:Number,
+        sex:String
+    },{collection:"newname"})
+    var PersonModel = mongoose.model('qwert',personschema)
+    var personenity = new PersonModel({name:"YYW",num:234,sex:"male"});
+    
+    personenity.save();
 
-    fluffy.save(function(){
-
-        fluffy.speak();
-        console.log(fluffy.name);
-        console.log("save success")
-    })
-
-
-});
+})
 
 
 // uncomment after placing your favicon in /public

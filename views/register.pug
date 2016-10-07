@@ -4,18 +4,18 @@ block head
     script(src="javascripts/vue-resource.js")
 block content
     p Register
-    //#form
+    #form
         label 用户名
             input(v-model="name").xxx
             p {{name}}
         label 密码
             input(v-model="password").password
             p {{password}}
-        button(v-on:click='greet') 提交
+
     //#example
         div {{msg}}
     #div(v-demo.literal="foo bar baz") 878789
-    //script.
+    script.
         var demo = new Vue({
             el: '#form',
             data: {
