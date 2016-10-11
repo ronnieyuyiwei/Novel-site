@@ -9,26 +9,12 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express',name:"6" });
 });
 
-router.get('/test', function (req, res, next) {
+router.get('/testfile', function (req, res) {
  
-  res.render('test', {value: "value"})
+  res.render('testfile', {})
 
 });
-router.post('/test', function (req, res, next) {
-  var name = req.body.name;
-  var password = req.body.password;
-  req.session.name = name;
-  console.log(req.session.name);
-  console.log(password);
-  dbop.insert(name,password,function (msg) {
-    console.log(msg == true);
-    if(msg == true){
-      // console.log("xx"+name);
-      // res.json({"msg":true,"name":req.session.name});
-      res.send({msg:msg})
-    }
-  });
-});
+
 router.get('/register', function(req, res, next) {
   // user.getvalue(function(msg){
   //

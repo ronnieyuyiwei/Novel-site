@@ -1,0 +1,11 @@
+extends layout
+block content
+    #app {{message}}
+
+     script.
+         var app = new Vue({
+             el: '#app',
+             data: {
+                 message: 'Hello Vue!'
+             }
+         })

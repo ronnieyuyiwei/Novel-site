@@ -11,27 +11,40 @@ var session = require('express-session');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var user = require('./dao/user');
+var school = require('./dao/mongo')
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
-var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/tianhe')
-var db = mongoose.connection;
-db.on('error',console.error.bind(console,"连接错误"))
-db.once('open',function () {
-    console.log("一次成功的打开")
-    var Schema = mongoose.Schema;
-    var personschema = new Schema({
-        name:String,
-        num:Number,
-        sex:String
-    },{collection:"newname"})
-    var PersonModel = mongoose.model('qwert',personschema)
-    var personenity = new PersonModel({name:"YYW",num:234,sex:"male"});
-    
-    personenity.save();
+// var mongoose = require('mongoose');
+// mongoose.connect('mongodb://localhost/tianhe')
+// var db = mongoose.connection;
+// var Schema = mongoose.Schema;
+// db.on('error',console.error.bind(console,"连接错误"))
+// db.once('open',function () {
+//     console.log("一次成功的打开")
+//     var Schema = mongoose.Schema;
+//     var personschema = new Schema({
+//         name:String,
+//         num:Number,
+//         sex:String
+//     },{collection:"newname"})
+//     var PersonModel = mongoose.model('qwert',personschema)
+//     var personenity = new PersonModel({name:"YYW",num:234,sex:"male"});
+//
+//     personenity.save();
+//
+// })
 
-})
+//
+// school(13,449,"进修附中","MR.w");
+// school(15,454,"上海中学");
+// school(16,467,"致远中学","MS.l");
+// school(17,489,"釜山中学","Ronnieyuyiwei");
+// school(18,498,"进才中学");
+
+school();
+
+
 
 
 // uncomment after placing your favicon in /public
