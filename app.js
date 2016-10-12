@@ -41,8 +41,11 @@ app.set('view engine', 'pug');
 // school(16,467,"致远中学","MS.l");
 // school(17,489,"釜山中学","Ronnieyuyiwei");
 // school(18,498,"进才中学");
+school(14,501,"冰山中学");
+school(144,498,"火山中学");
 
-school();
+
+// school();
 
 
 
