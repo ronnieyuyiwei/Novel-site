@@ -79,6 +79,15 @@ var saveobj = function (val1, val2, val3, val4) {
 
     })
 }
+var removeobj = function(){
+    School.remove({name:"冰山中学"},function(err){
+        if(err){
+            console.log(err)
+        }else{
+            console.log("delete ok")
+        }
+    })
+}
 // //通过model增加记录
 // var modelsave = function (val1, val2, val3, val4) {
 //     School.create({
@@ -153,4 +162,6 @@ var saveobj = function (val1, val2, val3, val4) {
 // exports.saveobj = saveobj;
 // module.exports =abcd;
 // module.exports = query;
-module.exports = saveobj;
+exports.removeobj=removeobj;
+exports.saveobj = saveobj;
+// module.exports = saveobj;

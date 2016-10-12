@@ -11,7 +11,7 @@ var session = require('express-session');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var user = require('./dao/user');
-var school = require('./dao/mongo')
+var school = require('./dao/mongo');
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
@@ -41,8 +41,8 @@ app.set('view engine', 'pug');
 // school(16,467,"致远中学","MS.l");
 // school(17,489,"釜山中学","Ronnieyuyiwei");
 // school(18,498,"进才中学");
-school(14,501,"冰山中学");
-school(144,498,"火山中学");
+school.saveobj(14,501,"冰山中学");
+school.removeobj();
 
 
 // school();
