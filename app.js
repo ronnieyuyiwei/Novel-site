@@ -12,6 +12,7 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var user = require('./dao/user');
 var school = require('./dao/mongo');
+var address = require('./dao/address');
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
@@ -41,8 +42,13 @@ app.set('view engine', 'pug');
 // school(16,467,"致远中学","MS.l");
 // school(17,489,"釜山中学","Ronnieyuyiwei");
 // school(18,498,"进才中学");
-school.saveobj(14,501,"冰山中学");
-school.removeobj();
+// school.saveobj(14,501,"冰山中学");
+// school.removeobj();
+address.addaddress("黄浦区","南京东路1230号","1");
+address.addaddress("杨浦区","黄山路1230号","2")
+address.addaddress("静安区","宝山路1230号","3")
+address.addaddress("浦东新区","林凤路1230号","4")
+address.addaddress("青浦区","飞天路1230号","5")
 
 
 // school();

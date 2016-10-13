@@ -7,6 +7,7 @@ var schoolSchema = new Schema({
     num: {type:Number,min:10,max:50},
     name: String,
     t_obj: Array,
+    address:Array,
     content: {type: Schema.Types.Mixed}
 
 }, {collection: "school"});
@@ -79,6 +80,22 @@ var saveobj = function (val1, val2, val3, val4) {
 
     })
 }
+
+var addfields = function(){
+    var condition = {};
+    var update = {$set:{"address":[]}};
+    var option = {upsert:true,multi:true};
+    School.update(condition,update,option,function(err){
+        if(err) {console.log(err)}
+        else{
+            console.log("输入成功")
+        }
+    });
+
+    
+}
+
+
 var removeobj = function(){
     School.remove({name:"冰山中学"},function(err){
         if(err){
@@ -164,4 +181,5 @@ var removeobj = function(){
 // module.exports = query;
 exports.removeobj=removeobj;
 exports.saveobj = saveobj;
+
 // module.exports = saveobj;
