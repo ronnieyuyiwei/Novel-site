@@ -7,9 +7,8 @@ var schoolSchema = new Schema({
     num: {type:Number,min:10,max:50},
     name: String,
     t_obj: Array,
-    address:Array,
+    address:[{type:Schema.Types.ObjectId, ref:'address'}],
     content: {type: Schema.Types.Mixed}
-
 }, {collection: "school"});
 
 
@@ -20,6 +19,22 @@ var schoolSchema = new Schema({
 // schoolSchema.methods.findbyusername = function(name,callback){
 //     return this.model("School").find({"name":"上海中学"},callback);
 // };
+schoolSchema.statics.findobj = function(callback){
+
+    var query = function (cb) {
+        var temp = this.model("School").findOne({"num":13}).select({address:1,_id:0});
+        cb()
+    }
+    var cb = function () {
+        var tempid = this.address;
+        return tempid;
+    }
+    
+    console.log("temp"+temp);
+   
+    // return this.findOne({_id:tempId}).populate("address").exec(callback);
+    return temp.exec(callback)
+}
 var School = mongoose.model('School', schoolSchema);
 // function abcd(){
 //     var abc = new School();
@@ -94,6 +109,9 @@ var addfields = function(){
 
     
 }
+// var insertaddress = function(num,address){
+//     School.findandmodify({"num":num},{$pull:{}})
+// }
 
 
 var removeobj = function(){
@@ -179,7 +197,8 @@ var removeobj = function(){
 // exports.saveobj = saveobj;
 // module.exports =abcd;
 // module.exports = query;
-exports.removeobj=removeobj;
-exports.saveobj = saveobj;
+// exports.removeobj=removeobj;
+// exports.saveobj = saveobj;
 
 // module.exports = saveobj;
+module.exports = School;

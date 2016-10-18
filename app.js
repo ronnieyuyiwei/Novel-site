@@ -44,12 +44,20 @@ app.set('view engine', 'pug');
 // school(18,498,"进才中学");
 // school.saveobj(14,501,"冰山中学");
 // school.removeobj();
-address.addaddress("黄浦区","南京东路1230号","1");
-address.addaddress("杨浦区","黄山路1230号","2")
-address.addaddress("静安区","宝山路1230号","3")
-address.addaddress("浦东新区","林凤路1230号","4")
-address.addaddress("青浦区","飞天路1230号","5")
-
+// address.addaddress("黄浦区","南京东路1230号","13");
+// address.addaddress("杨浦区","黄山路1230号","14");
+// address.addaddress("静安区","宝山路1230号","15");
+// address.addaddress("青浦区","朱家角镇6088号","15");
+// address.addaddress("徐汇区","天钥桥路567号","15");
+// address.addaddress("浦东新区","林凤路1230号","16");
+// address.addaddress("杨浦区","军工路516号","16");
+// address.addaddress("青浦区","飞天路1230号","17");
+school.findobj(function (err,result) {
+    if(err) console.log(err);
+    else{
+        console.log("查询成功"+" "+result.address);
+    }
+})
 
 // school();
 

@@ -15,3 +15,54 @@ block content
     var hello = "this is a very important string";
     console.log("get")
     console.log(hello.split(","))
+    var x = [
+      {
+        "dim": [
+          {
+            "dimname": "院区",
+            "name": "总院",
+            "hierarchy": "[院区].[总院]"
+          },
+          {
+            "dimname": "科室",
+            "name": "内科",
+            "hierarchy": "[科室].[科室]"
+          }
+        ],
+        "measures": [
+          {
+            "name": "门急诊人次",
+            "value": "22.9"
+          },
+          {
+            "name": "门急诊费用",
+            "value": "455"
+          }
+        ]
+      },
+      {
+        "dim": [
+          {
+            "dimname": "院区",
+            "name": "总院",
+            "hierarchy": "[院区].[总院]"
+          },
+          {
+            "dimname": "科室",
+            "name": "外科",
+            "hierarchy": "[科室].[科室]"
+          }
+        ],
+        "measures": [
+          {
+            "name": "门急诊人次",
+            "value": "32.4"
+          },
+          {
+            "name": "门急诊费用",
+            "value": "223"
+          }
+        ]
+      }
+    ]
+    console.log(x[0].measures)

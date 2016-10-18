@@ -2,7 +2,7 @@
  * Created by YYW on 2016/10/13.
  */
 var mongoose = require('./mongoose.js');
-
+var school = require('./mongo.js');
 var Schema = mongoose.Schema;
 var addressSchema = new Schema({
     
@@ -11,6 +11,7 @@ var addressSchema = new Schema({
     num : Number
 
 },{collection:"address"});
+
 var Address = mongoose.model("Address",addressSchema);
 var addaddress = function(name,address,num){
     Address.create({name:name,address:address,num:num},function (err) {
