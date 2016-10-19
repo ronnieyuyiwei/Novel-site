@@ -52,11 +52,36 @@ app.set('view engine', 'pug');
 // address.addaddress("浦东新区","林凤路1230号","16");
 // address.addaddress("杨浦区","军工路516号","16");
 // address.addaddress("青浦区","飞天路1230号","17");
-school.findobj(function (err,result) {
+// school.findobj(function (err,result) {
+//     if(err) console.log(err);
+//     else{
+//         console.log("查询成功"+" "+result);
+//     }
+// })
+var Clazz = require('./dao/class')
+var Student = require('./dao/student')
+// var clazz = new Clazz(
+//  {
+//  clazzName:'软件2班'
+//  }
+//  );
+//
+//  clazz.save(function  (argument){
+//  console.log('true');
+//  });
+//
+// var student = new Student({
+//  name : 'hacke2',
+//  clazzID : '58072c162e69164024bb0ed2'
+//  })
+//  student.save(function (err){
+//  console.log('true');
+//  })
+
+Student.findClazzNameByStudentName('hacke2', function (err, student){
     if(err) console.log(err);
-    else{
-        console.log("查询成功"+" "+result.address);
-    }
+
+    console.log(student.clazzID.clazzName);
 })
 
 // school();

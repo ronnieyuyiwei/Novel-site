@@ -1,11 +1,10 @@
-/**
- * Created by YYW on 2016/10/13.
- */
+// /**
+//  * Created by YYW on 2016/10/13.
+//  */
 var mongoose = require('./mongoose.js');
-var school = require('./mongo.js');
 var Schema = mongoose.Schema;
 var addressSchema = new Schema({
-    
+   
     name :String,
     address:String,
     num : Number
@@ -13,12 +12,12 @@ var addressSchema = new Schema({
 },{collection:"address"});
 
 var Address = mongoose.model("Address",addressSchema);
-var addaddress = function(name,address,num){
-    Address.create({name:name,address:address,num:num},function (err) {
-        if(err) console.log(err);
-        else{
-            console.log("地址插入成功")
-        }
-    })
-};
-exports.addaddress = addaddress;
+// var addaddress = function(name,address,num){
+//     Address.create({name:name,address:address,num:num},function (err) {
+//         if(err) console.log(err);
+//         else{
+//             console.log("地址插入成功")
+//         }
+//     })
+// };
+module.exports = Address;

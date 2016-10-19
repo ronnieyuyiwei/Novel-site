@@ -1,13 +1,13 @@
 var mongoose = require('./mongoose.js');
-
+var Address = require('./address.js');
 var Schema = mongoose.Schema;
 var schoolSchema = new Schema({
     addusername: {type: String, default: "匿名"},
     date: {type: Date, default: Date.now()},
-    num: {type:Number,min:10,max:50},
+    num: {type: Number, min: 10, max: 50},
     name: String,
     t_obj: Array,
-    address:[{type:Schema.Types.ObjectId, ref:'address'}],
+    address: [{type: Schema.Types.ObjectId, ref: 'address'}],
     content: {type: Schema.Types.Mixed}
 }, {collection: "school"});
 
@@ -19,23 +19,14 @@ var schoolSchema = new Schema({
 // schoolSchema.methods.findbyusername = function(name,callback){
 //     return this.model("School").find({"name":"上海中学"},callback);
 // };
-schoolSchema.statics.findobj = function(callback){
-
-    var query = function (cb) {
-        var temp = this.model("School").findOne({"num":13}).select({address:1,_id:0});
-        cb()
-    }
-    var cb = function () {
-        var tempid = this.address;
-        return tempid;
-    }
-    
-    console.log("temp"+temp);
-   
-    // return this.findOne({_id:tempId}).populate("address").exec(callback);
-    return temp.exec(callback)
+schoolSchema.statics.findobj = function (callback) {
+    // var temp = this.model("School").findOne({"num": 13}).select({address: 1, _id: 0});
+    // return temp.exec(callback)
+    return this.findOne({"num":13}).populated("").exec(callback)
 }
 var School = mongoose.model('School', schoolSchema);
+
+
 // function abcd(){
 //     var abc = new School();
 //     abc.findbyusername('上海中学', function(error, result){
@@ -96,29 +87,31 @@ var saveobj = function (val1, val2, val3, val4) {
     })
 }
 
-var addfields = function(){
+var addfields = function () {
     var condition = {};
-    var update = {$set:{"address":[]}};
-    var option = {upsert:true,multi:true};
-    School.update(condition,update,option,function(err){
-        if(err) {console.log(err)}
-        else{
+    var update = {$set: {"address": []}};
+    var option = {upsert: true, multi: true};
+    School.update(condition, update, option, function (err) {
+        if (err) {
+            console.log(err)
+        }
+        else {
             console.log("输入成功")
         }
     });
 
-    
+
 }
 // var insertaddress = function(num,address){
 //     School.findandmodify({"num":num},{$pull:{}})
 // }
 
 
-var removeobj = function(){
-    School.remove({name:"冰山中学"},function(err){
-        if(err){
+var removeobj = function () {
+    School.remove({name: "冰山中学"}, function (err) {
+        if (err) {
             console.log(err)
-        }else{
+        } else {
             console.log("delete ok")
         }
     })
