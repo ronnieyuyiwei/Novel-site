@@ -1,15 +1,15 @@
-var mongoose = require('./mongoose.js');
-var Address = require('./address.js');
-var Schema = mongoose.Schema;
-var schoolSchema = new Schema({
-    addusername: {type: String, default: "匿名"},
-    date: {type: Date, default: Date.now()},
-    num: {type: Number, min: 10, max: 50},
-    name: String,
-    t_obj: Array,
-    address: [{type: Schema.Types.ObjectId, ref: 'address'}],
-    content: {type: Schema.Types.Mixed}
-}, {collection: "school"});
+// var mongoose = require('./mongoose.js');
+// var Address = require('./addressSchema.js');
+// var Schema = mongoose.Schema;
+// var schoolSchema = new Schema({
+//     addusername: {type: String, default: "匿名"},
+//     date: {type: Date, default: Date.now()},
+//     num: {type: Number, min: 10, max: 50},
+//     name: String,
+//     t_obj: Array,
+//     address: [{type: Schema.Types.ObjectId, ref: 'Address'}],
+//     content: {type: Schema.Types.Mixed}
+// }, {collection: "school"});
 
 
 // schoolSchema.methods.findbyusername = function(name,callback){
@@ -19,13 +19,13 @@ var schoolSchema = new Schema({
 // schoolSchema.methods.findbyusername = function(name,callback){
 //     return this.model("School").find({"name":"上海中学"},callback);
 // };
-schoolSchema.statics.findobj = function (callback) {
-    // var temp = this.model("School").findOne({"num": 13}).select({address: 1, _id: 0});
-    // return temp.exec(callback)
-    return this.findOne({"num":13}).populated("").exec(callback)
-}
-var School = mongoose.model('School', schoolSchema);
-
+// schoolSchema.statics.findobj = function (callback) {
+//     // var temp = this.model("School").findOne({"num": 13}).select({address: 1, _id: 0});
+//     // return temp.exec(callback)
+//     return this.findOne({"num":13}).populate("address").exec(callback)
+// }
+// var School = mongoose.model('School', schoolSchema);
+//
 
 // function abcd(){
 //     var abc = new School();
@@ -107,15 +107,15 @@ var addfields = function () {
 // }
 
 
-var removeobj = function () {
-    School.remove({name: "冰山中学"}, function (err) {
-        if (err) {
-            console.log(err)
-        } else {
-            console.log("delete ok")
-        }
-    })
-}
+// var removeobj = function () {
+//     School.remove({name: "冰山中学"}, function (err) {
+//         if (err) {
+//             console.log(err)
+//         } else {
+//             console.log("delete ok")
+//         }
+//     })
+// }
 // //通过model增加记录
 // var modelsave = function (val1, val2, val3, val4) {
 //     School.create({
@@ -194,4 +194,4 @@ var removeobj = function () {
 // exports.saveobj = saveobj;
 
 // module.exports = saveobj;
-module.exports = School;
+// module.exports = School;
