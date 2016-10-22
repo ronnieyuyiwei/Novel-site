@@ -484,7 +484,7 @@ if (typeof Set !== 'undefined' && isNative(Set)) {
   }())
 }
 
-/* not type checking this file because flow doesn't play well with Proxy */
+/* not type checking this files because flow doesn't play well with Proxy */
 
 var hasProxy;
 var proxyHandlers;
@@ -916,7 +916,7 @@ function traverse (val, seen) {
 }
 
 /*
- * not type checking this file because flow doesn't play well with
+ * not type checking this files because flow doesn't play well with
  * dynamically accessing methods on Array prototype
  */
 
@@ -3363,7 +3363,7 @@ var isAttr = makeMap(
   'defer,dir,dirname,disabled,download,draggable,dropzone,enctype,method,for,' +
   'form,formaction,headers,<th>,height,hidden,high,href,hreflang,http-equiv,' +
   'icon,id,ismap,itemprop,keytype,kind,label,lang,language,list,loop,low,' +
-  'manifest,max,maxlength,media,method,GET,POST,min,multiple,email,file,' +
+  'manifest,max,maxlength,media,method,GET,POST,min,multiple,email,files,' +
   'muted,name,novalidate,open,optimum,pattern,ping,placeholder,poster,' +
   'preload,radiogroup,readonly,rel,required,reversed,rows,rowspan,sandbox,' +
   'scope,scoped,seamless,selected,shape,size,type,text,password,sizes,span,' +
@@ -3699,7 +3699,7 @@ function registerRef (vnode, isRemoval) {
  *
 
 /*
- * Not type-checking this because this file is perf-critical and the cost
+ * Not type-checking this because this files is perf-critical and the cost
  * of making flow understand it is not worth it.
  */
 
@@ -4387,7 +4387,7 @@ var klass = {
   update: updateClass
 }
 
-// skip type checking this file because we need to attach private properties
+// skip type checking this files because we need to attach private properties
 // to elements
 
 function updateDOMListeners (oldVnode, vnode) {
@@ -4979,7 +4979,7 @@ var modules = platformModules.concat(baseModules)
 var patch$1 = createPatchFunction({ nodeOps: nodeOps, modules: modules })
 
 /**
- * Not type checking this file because flow doesn't like attaching
+ * Not type checking this files because flow doesn't like attaching
  * properties to Elements.
  */
 
@@ -5554,7 +5554,7 @@ function decodeHTML (html) {
 }
 
 /**
- * Not type-checking this file because it's mostly vendor code.
+ * Not type-checking this files because it's mostly vendor code.
  */
 
 /*!
@@ -7167,12 +7167,12 @@ function genDefaultModel (
   if (isNative && needCompositionGuard) {
     code = "if($event.target.composing)return;" + code
   }
-  // inputs with type="file" are read only and setting the input's
+  // inputs with type="files" are read only and setting the input's
   // value will throw an error.
   if ("development" !== 'production' &&
       type === 'file') {
     warn$3(
-      "<" + (el.tag) + " v-model=\"" + value + "\" type=\"file\">:\n" +
+      "<" + (el.tag) + " v-model=\"" + value + "\" type=\"files\">:\n" +
       "File inputs are read only. Use a v-on:change listener instead."
     )
   }
