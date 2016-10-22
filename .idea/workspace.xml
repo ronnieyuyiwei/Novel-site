@@ -5,10 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08824895-2b68-4002-bef3-4d398baf52d9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/files/1.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/files/2.txt" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/database/tianhe/accounts.bson" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/database/tianhe/accounts.metadata.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/database/tianhe/address.bson" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/database/tianhe/address.metadata.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/database/tianhe/clazzs.bson" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/database/tianhe/clazzs.metadata.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/database/tianhe/newname.bson" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/database/tianhe/newname.metadata.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/database/tianhe/qwerts.bson" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/database/tianhe/qwerts.metadata.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/database/tianhe/school.bson" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/database/tianhe/school.metadata.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/database/tianhe/story_collections.bson" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/database/tianhe/story_collections.metadata.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/database/tianhe/students.bson" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/database/tianhe/students.metadata.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/database/tianhe/test2.bson" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/database/tianhe/test2.metadata.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/database/tianhe/testdb.bson" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/database/tianhe/testdb.metadata.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/database/tianhe/transactions.bson" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/database/tianhe/transactions.metadata.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/database/tianhe/users.bson" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/database/tianhe/users.metadata.json" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/vue.js" afterPath="$PROJECT_DIR$/public/javascripts/vue.js" />
     </list>
     <ignored path="Andromeda.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -380,57 +401,25 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="public">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Andromeda">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="public">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="javascripts">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Andromeda">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="public">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="javascripts">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Andromeda">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
             <PATH_ELEMENT USER_OBJECT="files">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Andromeda">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="database">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="tianhe">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -442,7 +431,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$USER_HOME$/WebstormProjects/untitled1" />
-    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
@@ -592,7 +581,7 @@
       <workItem from="1476893858285" duration="1065000" />
       <workItem from="1476937317993" duration="13226000" />
       <workItem from="1477043298880" duration="1248000" />
-      <workItem from="1477110325620" duration="866000" />
+      <workItem from="1477110325620" duration="2378000" />
     </task>
     <task id="LOCAL-00001" summary="first git test&#10;">
       <created>1477111708979</created>
@@ -601,11 +590,18 @@
       <option name="project" value="LOCAL" />
       <updated>1477111708979</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="first git test&#10;">
+      <created>1477111927898</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1477111927898</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="207874000" />
+    <option name="totallyTimeSpent" value="209386000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -620,14 +616,14 @@
     <frame x="-8" y="0" width="1932" height="1056" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21207266" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21207266" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3531961" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3531961" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13885956" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1383547" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3993015" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
