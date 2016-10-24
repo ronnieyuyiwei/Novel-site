@@ -5,30 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08824895-2b68-4002-bef3-4d398baf52d9" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/database/tianhe/accounts.bson" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/database/tianhe/accounts.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/database/tianhe/address.bson" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/database/tianhe/address.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/database/tianhe/clazzs.bson" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/database/tianhe/clazzs.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/database/tianhe/newname.bson" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/database/tianhe/newname.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/database/tianhe/qwerts.bson" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/database/tianhe/qwerts.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/database/tianhe/school.bson" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/database/tianhe/school.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/database/tianhe/story_collections.bson" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/database/tianhe/story_collections.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/database/tianhe/students.bson" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/database/tianhe/students.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/database/tianhe/test2.bson" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/database/tianhe/test2.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/database/tianhe/testdb.bson" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/database/tianhe/testdb.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/database/tianhe/transactions.bson" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/database/tianhe/transactions.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/database/tianhe/users.bson" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/database/tianhe/users.metadata.json" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Andromeda.iws" />
@@ -581,7 +557,7 @@
       <workItem from="1476893858285" duration="1065000" />
       <workItem from="1476937317993" duration="13226000" />
       <workItem from="1477043298880" duration="1248000" />
-      <workItem from="1477110325620" duration="2378000" />
+      <workItem from="1477110325620" duration="2382000" />
     </task>
     <task id="LOCAL-00001" summary="first git test&#10;">
       <created>1477111708979</created>
@@ -597,11 +573,18 @@
       <option name="project" value="LOCAL" />
       <updated>1477111927898</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="first git test&#10;">
+      <created>1477114660055</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1477114660055</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="209386000" />
+    <option name="totallyTimeSpent" value="209390000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
