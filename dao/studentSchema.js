@@ -9,7 +9,7 @@ var StudentSchema = new mongoose.Schema({
         type : mongoose.Schema.ObjectId,
         ref : 'Clazz'
     }
-})
+});
 
 StudentSchema.statics = {
     findClazzNameByStudentName:function(name, callback){
@@ -20,4 +20,4 @@ StudentSchema.statics = {
     //其他方法省略..
 }
 
-module.exports = StudentSchema
+module.exports = StudentSchema;

@@ -1,4 +1,6 @@
 var express = require('express');
+var assert = require('assert')
+
 var events = require('events');
 var emitter = new events.EventEmitter();
 var path = require('path');
@@ -11,14 +13,20 @@ var session = require('express-session');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var user = require('./dao/user');
-var school = require('./dao/mongo');
+
+var Student = require('./dao/student');
 var address = require('./dao/addressModel');
+var school = require('./dao/schoolModel');
+var toy = require('./dao/toy');
+var clazz = require('./dao/class')
+
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(logger('dev'));
+app.use(logger('dev')); 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
@@ -27,6 +35,19 @@ app.use(express.static(path.join(__dirname,'files')))
 app.use('/', routes);
 app.use('/users', users);
 app.use(session({ secret: 'keyboard cat', cookie: { maxAge: 60000 }}));
+
+
+// assert(1);     // OK
+// school.findaddress("进修附中",function(err,result){
+//     if(err) console.log(err)
+//      else {
+//
+//             for(var i = 0;i<result[0].address.length;i++){
+//                 console.log(result[0].address[i].name+" "+result[0].address[i].address)
+//             }
+//
+//     }
+//  })
 // catch 404 and forward to error handler
 //
 // school(13,449,"进修附中","MR.w");
@@ -36,24 +57,22 @@ app.use(session({ secret: 'keyboard cat', cookie: { maxAge: 60000 }}));
 // school(18,498,"进才中学");
 // school.saveobj(14,501,"冰山中学");
 // school.removeobj();
-address("78902国","江南区1333334号","13");
+// address("78902国","江南区1333334号","13");
 // address.addaddress("杨浦区","黄山路1230号","14");
 // address("杨浦区",function(err,result){
 //     if(err) console.log(err)
 //     else console.log(result)
 // })
 // var val = 1;
-
-// 我们假设step1, step2, step3都是ajax调用后端或者是
-// 在Node.js上查询数据库的异步操作
-// 每个步骤都有对应的失败和成功处理回调
-// 需求是这样，step1、step2、step3必须按顺序执行
+//
+// // 我们假设step1, step2, step3都是ajax调用后端或者是
+// // 在Node.js上查询数据库的异步操作
+// // 每个步骤都有对应的失败和成功处理回调
+// // 需求是这样，step1、step2、step3必须按顺序执行
 // function step1(resolve, reject) {
 //     console.log('步骤一：执行');
 //     if (val >= 1) {
-//
 //         resolve('Hello I am No.1');
-//         console.log("qwert1")
 //     } else if (val === 0) {
 //         reject(val);
 //     }
@@ -62,9 +81,7 @@ address("78902国","江南区1333334号","13");
 // function step2(resolve, reject) {
 //     console.log('步骤二：执行');
 //     if (val === 1) {
-//         val=5;
-//          resolve();
-//         console.log("qwert2")
+//         resolve('Hello I am No.2');
 //     } else if (val === 0) {
 //         reject(val);
 //     }
@@ -72,9 +89,8 @@ address("78902国","江南区1333334号","13");
 //
 // function step3(resolve, reject) {
 //     console.log('步骤三：执行');
-//     if (val >= 1) {
-//         console.log(val)
-//         // resolve('Hello I am No.3');
+//     if (val === 1) {
+//         resolve('Hello I am No.3');
 //     } else if (val === 0) {
 //         reject(val);
 //     }
@@ -93,6 +109,19 @@ address("78902国","江南区1333334号","13");
 //     console.info(val);
 //     return val;
 // });
+// var milk =450;
+// function a(){
+//     milk = milk +1;
+//  
+// }
+// console.log(a())
+// function b() {
+//     milk = milk + 0.1;
+//
+// }
+// function c() {
+//     milk = milk + 0.02
+// }
 // address.addaddress("静安区","宝山路1230号","15");
 // address.addaddress("青浦区","朱家角镇6088号","15");
 // address.addaddress("徐汇区","天钥桥路567号","15");

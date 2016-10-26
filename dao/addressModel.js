@@ -25,5 +25,4 @@ var tiger =function (name,address,num) {
 
 };
 
-// module.exports = Address;
-module.exports = tiger;
+module.exports = Address;

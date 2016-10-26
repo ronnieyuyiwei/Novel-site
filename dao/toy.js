@@ -1,12 +1,16 @@
 /**
  * Created by YYW on 2016/10/24.
  */
+// var assert = require('assert');
+var mongoose = require('./mongoose.js');
+var assert = require('assert')
+var Schema = mongoose.Schema;
 var toySchema = new Schema({
     color: String,
     name: String
 });
 
-var Toy = db.model('Toy', toySchema);
+var Toy = mongoose.model('Toy', toySchema);
 
 var validator = function (value) {
     return /blue|green|white|red|orange|periwinkle/i.test(value);
@@ -14,14 +18,18 @@ var validator = function (value) {
 Toy.schema.path('color').validate(validator,
     'Color `{VALUE}` not valid', 'Invalid color');
 
-var toy = new Toy({ color: 'grease'});
+var toy = new Toy({ color: 'green'});
+var ftoy = function () {
+    toy.save(function (err) {
+        // err is our ValidationError object
+        // err.errors.color is a ValidatorError object
+        // console.log(err.errors.color.message)
+        // console.log(err.errors.color.kind)
+        // console.log(err.errors.color.path)
+        // console.log(err.errors.color.value)
+        // console.log(err.errors.color.name)
 
-toy.save(function (err) {
-    // err is our ValidationError object
-    // err.errors.color is a ValidatorError object
-    assert.equal(err.errors.color.message, 'Color `grease` not valid');
-    assert.equal(err.errors.color.kind, 'Invalid color');
-    assert.equal(err.errors.color.path, 'color');
-    assert.equal(err.errors.color.value, 'grease');
-    assert.equal(err.name, 'ValidationError');
-});
+    });
+}
+
+exports.ftoy = ftoy;
