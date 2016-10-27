@@ -18,8 +18,9 @@ var Student = require('./dao/student');
 var address = require('./dao/addressModel');
 var school = require('./dao/schoolModel');
 var toy = require('./dao/toy');
-var clazz = require('./dao/class')
-
+var clazz = require('./dao/class');
+var Person = require('./dao/Model/personModel');
+var Story = require('./dao/Model/storyModel');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -36,7 +37,44 @@ app.use('/', routes);
 app.use('/users', users);
 app.use(session({ secret: 'keyboard cat', cookie: { maxAge: 60000 }}));
 
+var arron = new Person({
+    _id:0,
+    name:'Arron',
+    age:100
+});
+var story1 = new Story({
+    title:'Once upon a time',
+   _creator:arron._id
 
+});
+// arron.save(function (err) {
+//     if(err){
+//         console.log(err)
+//     }
+//         else{
+//         console.log("Person save success!")
+//     }
+//
+// });
+// story1.save(function (err) {
+//     if(err){
+//         console.log(err)
+//     }
+//     else{
+//         console.log("story save success!")
+//     }
+// })
+
+Story.findOne({
+    title:'Once upon a time'
+}).populate('_creator').exec(function (err,result) {
+    if(err){
+        console.log(err);
+    }else {
+        console.log(result);
+        console.log(result._creator.name)
+    }
+});
 // assert(1);     // OK
 // school.findaddress("进修附中",function(err,result){
 //     if(err) console.log(err)
