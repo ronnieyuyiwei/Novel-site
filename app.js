@@ -1,5 +1,5 @@
 var express = require('express');
-var assert = require('assert')
+var assert = require('assert');
 
 var events = require('events');
 var emitter = new events.EventEmitter();
@@ -39,42 +39,64 @@ app.use(session({ secret: 'keyboard cat', cookie: { maxAge: 60000 }}));
 
 var arron = new Person({
     _id:0,
-    name:'Arron',
-    age:100
+    name:'DING',
+    age:45
 });
 var story1 = new Story({
-    title:'Once upon a time',
+    title:'Hello world',
    _creator:arron._id
 
 });
-// arron.save(function (err) {
-//     if(err){
-//         console.log(err)
-//     }
-//         else{
-//         console.log("Person save success!")
-//     }
-//
-// });
-// story1.save(function (err) {
-//     if(err){
-//         console.log(err)
-//     }
-//     else{
-//         console.log("story save success!")
-//     }
-// })
+arron.stories.push(story1);
+function a(resolve,reject){
+    arron.save(function (err) {
 
-Story.findOne({
-    title:'Once upon a time'
-}).populate('_creator').exec(function (err,result) {
-    if(err){
-        console.log(err);
-    }else {
-        console.log(result);
-        console.log(result._creator.name)
-    }
-});
+        if(err)
+            reject(err)
+        else{
+          resolve("person success")
+        }
+    });
+}
+function b(resolve,reject){
+    story1.save(function (err) {
+        if(err)
+            reject(err)
+        else{
+            resolve("story success")
+        }
+    });
+}
+// Person
+//     .findOne({ name: 'DING' })
+//     // .populate('stories') // only works if we pushed refs to children
+//     .exec(function (err, person) {
+//         if (err) return handleError(err);
+//         console.log(person);
+//     })
+function c(resolve,reject){
+    Story.findOne({
+        title:'Hello world'
+    }).populate({ path: '_creator', select: 'name'}).exec(function (err,result) {
+        if(err){
+            reject(err);
+        }else {
+            console.log("inner"+result);
+            resolve(result._creator.name);
+        }
+    });
+}
+new Promise(a).then(function(val){
+    console.log(val);
+    return new Promise(b);
+}).then(function(val){
+    console.log(val);
+    return new Promise(c)
+}).then(function(val){
+    console.log(val);
+    
+})
+
 // assert(1);     // OK
 // school.findaddress("进修附中",function(err,result){
 //     if(err) console.log(err)
