@@ -3,11 +3,42 @@
 <head>
     <meta charset="utf-8">
     <title>Webpack Sample Project</title>
+    <!--<script src='../public/javascripts/vue.js'></script>-->
+    <script src="../node_modules/vue/dist/vue.js"></script>
+    <style>
+        .active {
+            color: blue;
+        }
+    </style>
 </head>
 <body>
-<div id='root'>
-</div>
-<div class="hello">你好，烦烦烦</div>
-<script src="../build/bundle.js"></script>
+
+<form class="form">
+    <select v-model="selected" option="myOptions">
+        <!--<option v-for="option in options" v-bind:value="option.value">-->
+            <!--{{ option.text }}-->
+        <!--</option>-->
+    </select>
+    <span>Selected: {{ selected }}</span>
+
+</form>
+
+<script>
+    var vm = new Vue({
+        el: '.form',
+        data: {
+            selected: 'A',
+
+        },
+       options: [
+            { text: 'One', value: 'A' },
+            { text: 'Two', value: 'B' },
+            { text: 'Three', value: 'C'},
+            { text: 'Four', value: 'D' }
+
+        ]
+
+    })
+</script>
 </body>
 </html>

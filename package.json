@@ -19,6 +19,7 @@
     "morgan": "~1.7.0",
     "pug": "^2.0.0-beta3",
     "serve-favicon": "~2.3.0",
+    "vue": "^2.0.3",
     "vue-resource": "^0.9.3",
     "webpack": "^1.13.3"
   }

@@ -12,10 +12,11 @@ module.exports = {
     },
   
     loaders: [
-        {
-            test: /\.scss$/,
-            loader: "style!css!sass"
-        }]
+        // {
+        //     test: /\.scss$/,
+        //     loader: "style!css!sass"
+        // }
+    ]
     // ,
     //
     // module: {

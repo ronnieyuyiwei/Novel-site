@@ -37,36 +37,36 @@ app.use('/', routes);
 app.use('/users', users);
 app.use(session({ secret: 'keyboard cat', cookie: { maxAge: 60000 }}));
 
-var arron = new Person({
-    _id:0,
-    name:'DING',
-    age:45
-});
-var story1 = new Story({
-    title:'Hello world',
-   _creator:arron._id
-
-});
-arron.stories.push(story1);
-function a(resolve,reject){
-    arron.save(function (err) {
-
-        if(err)
-            reject(err)
-        else{
-          resolve("person success")
-        }
-    });
-}
-function b(resolve,reject){
-    story1.save(function (err) {
-        if(err)
-            reject(err)
-        else{
-            resolve("story success")
-        }
-    });
-}
+// var arron = new Person({
+//     _id:0,
+//     name:'DING',
+//     age:45
+// });
+// var story1 = new Story({
+//     title:'Hello world',
+//    _creator:arron._id
+//
+// });
+// arron.stories.push(story1);
+// function a(resolve,reject){
+//     arron.save(function (err) {
+//
+//         if(err)
+//             reject(err)
+//         else{
+//           resolve("person success")
+//         }
+//     });
+// }
+// function b(resolve,reject){
+//     story1.save(function (err) {
+//         if(err)
+//             reject(err)
+//         else{
+//             resolve("story success")
+//         }
+//     });
+// }
 // Person
 //     .findOne({ name: 'DING' })
 //     // .populate('stories') // only works if we pushed refs to children
@@ -74,28 +74,28 @@ function b(resolve,reject){
 //         if (err) return handleError(err);
 //         console.log(person);
 //     })
-function c(resolve,reject){
-    Story.findOne({
-        title:'Hello world'
-    }).populate({ path: '_creator', select: 'name'}).exec(function (err,result) {
-        if(err){
-            reject(err);
-        }else {
-            console.log("inner"+result);
-            resolve(result._creator.name);
-        }
-    });
-}
-new Promise(a).then(function(val){
-    console.log(val);
-    return new Promise(b);
-}).then(function(val){
-    console.log(val);
-    return new Promise(c)
-}).then(function(val){
-    console.log(val);
-    
-})
+// function c(resolve,reject){
+//     Story.findOne({
+//         title:'Hello world'
+//     }).populate({ path: '_creator', select: 'name'}).exec(function (err,result) {
+//         if(err){
+//             reject(err);
+//         }else {
+//             console.log("inner"+result);
+//             resolve(result._creator.name);
+//         }
+//     });
+// }
+// new Promise(a).then(function(val){
+//     console.log(val);
+//     return new Promise(b);
+// }).then(function(val){
+//     console.log(val);
+//     return new Promise(c)
+// }).then(function(val){
+//     console.log(val);
+//    
+// })
 
 // assert(1);     // OK
 // school.findaddress("进修附中",function(err,result){

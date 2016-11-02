@@ -48,6 +48,7 @@
 	 * Created by YYW on 2016/10/28.
 	 */
 	//main.js
+	
 	var greeter = __webpack_require__(1);
 	document.getElementById('root').appendChild(greeter());
 
@@ -58,12 +59,9 @@
 	/**
 	 * Created by YYW on 2016/10/28.
 	 */
-	
-	import styles from '../public/scss/test.scss';
 	module.exports = function() {
 	    var greet = document.createElement('div');
 	    greet.textContent = "Hi there and greetings! 你好吗？";
-	    greet.tagName(styles.p)
 	    return greet;
 	};
 
