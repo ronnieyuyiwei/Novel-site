@@ -12,32 +12,63 @@
     </style>
 </head>
 <body>
-
-<form class="form">
-    <select v-model="selected" option="myOptions">
-        <!--<option v-for="option in options" v-bind:value="option.value">-->
-            <!--{{ option.text }}-->
-        <!--</option>-->
-    </select>
-    <span>Selected: {{ selected }}</span>
-
-</form>
-
+<div id="example">
+    <my-button @calculate="calNum"></my-button>
+    <!--<input v-model="message" placeholder="edit me">-->
+    <p>result is: {{ result }}</p>
+</div>
 <script>
-    var vm = new Vue({
-        el: '.form',
-        data: {
-            selected: 'A',
-
+    Vue.component('my-button',{
+        template:'\
+                    <div class="form-group">\
+                      <button v-on:click="add2methods">{{button_num1}}</button>\
+                        <span> X </span>\
+                        <button v-on:click="add3methods">{{button_num2}}</button>\
+                        <span> + </span>\
+                        <input  v-bind:value="value" type="number" v-on:input="onInput">\
+                    </div>\
+                    ',
+        props: ['value'],
+        data:function () {
+            return {
+                button_num1:0,
+                button_num2:0
+            };
         },
-       options: [
-            { text: 'One', value: 'A' },
-            { text: 'Two', value: 'B' },
-            { text: 'Three', value: 'C'},
-            { text: 'Four', value: 'D' }
+        methods:{
+            add2methods:function(){
+                var fname = "a";
+                this.button_num1 += 2;
+                this.$emit('calculate',fname,this.button_num1)
+            },
+            add3methods:function(){
+                var fname2 = "b";
+                this.button_num2 += 3;
+                this.$emit('calculate',fname2,this.button_num2)
+            },
+            onInput: function (event) {
+                this.$emit('input', event.target.value)
+            }
+        }
 
-        ]
-
+    })
+    var vm = new Vue({
+        el:"#example",
+        data:{
+            result:0,
+            a:0,
+            b:0
+        },
+        methods:{
+            calNum:function (name,val) {
+                if(name=="a"){
+                    this.a = val
+                }else if(name=="b"){
+                    this.b = val
+                }
+                this.result = this.a* this.b
+            }
+        }
     })
 </script>
 </body>
