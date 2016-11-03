@@ -13,60 +13,67 @@
 </head>
 <body>
 <div id="example">
-    <my-button @calculate="calNum"></my-button>
+    <my-button @calculate="calNum" v-model="message"></my-button>
     <!--<input v-model="message" placeholder="edit me">-->
     <p>result is: {{ result }}</p>
+    <p>Message is: {{message }}</p>
 </div>
 <script>
-    Vue.component('my-button',{
-        template:'\
+    Vue.component('my-button', {
+        template: '\
                     <div class="form-group">\
                       <button v-on:click="add2methods">{{button_num1}}</button>\
                         <span> X </span>\
                         <button v-on:click="add3methods">{{button_num2}}</button>\
                         <span> + </span>\
-                        <input  v-bind:value="value" type="number" v-on:input="onInput">\
+                             <input type="number" v-bind:value="value" @input="onInput" >\
                     </div>\
                     ',
         props: ['value'],
-        data:function () {
+        data: function () {
             return {
-                button_num1:0,
-                button_num2:0
+                button_num1: 0,
+                button_num2: 0
             };
         },
-        methods:{
-            add2methods:function(){
+        methods: {
+            add2methods: function () {
                 var fname = "a";
                 this.button_num1 += 2;
-                this.$emit('calculate',fname,this.button_num1)
+                this.$emit('calculate', fname, this.button_num1)
             },
-            add3methods:function(){
+            add3methods: function () {
                 var fname2 = "b";
                 this.button_num2 += 3;
-                this.$emit('calculate',fname2,this.button_num2)
+                this.$emit('calculate', fname2, this.button_num2)
             },
-            onInput: function (event) {
-                this.$emit('input', event.target.value)
+            onInput:function (event) {
+                this.$emit('input',event.target.value);
+                this.$emit('calculate', "c", event.target.value)
             }
         }
 
     })
     var vm = new Vue({
-        el:"#example",
-        data:{
-            result:0,
-            a:0,
-            b:0
+        el: "#example",
+        data: {
+            message:0,
+            result: 0,
+            a: 0,
+            b: 0,
+            c: 0
         },
-        methods:{
-            calNum:function (name,val) {
-                if(name=="a"){
+        methods: {
+            calNum: function (name, val) {
+                if (name == "a") {
                     this.a = val
-                }else if(name=="b"){
+                } else if (name == "b") {
                     this.b = val
+                }else if (name == "c") {
+                    this.c = val
                 }
-                this.result = this.a* this.b
+                console.log(this.c)
+                this.result =  this.a*this.b+ parseInt(this.c)
             }
         }
     })
