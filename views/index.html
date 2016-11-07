@@ -5,78 +5,27 @@
     <title>Webpack Sample Project</title>
     <!--<script src='../public/javascripts/vue.js'></script>-->
     <script src="../node_modules/vue/dist/vue.js"></script>
+
     <style>
-        .active {
-            color: blue;
-        }
+
     </style>
 </head>
 <body>
-<div id="example">
-    <my-button @calculate="calNum" v-model="message"></my-button>
-    <!--<input v-model="message" placeholder="edit me">-->
-    <p>result is: {{ result }}</p>
-    <p>Message is: {{message }}</p>
+<div class="div">
+   <jsx-example></jsx-example>
 </div>
-<script>
-    Vue.component('my-button', {
-        template: '\
-                    <div class="form-group">\
-                      <button v-on:click="add2methods">{{button_num1}}</button>\
-                        <span> X </span>\
-                        <button v-on:click="add3methods">{{button_num2}}</button>\
-                        <span> + </span>\
-                             <input type="number" v-bind:value="value" @input="onInput" >\
-                    </div>\
-                    ',
-        props: ['value'],
-        data: function () {
-            return {
-                button_num1: 0,
-                button_num2: 0
-            };
-        },
-        methods: {
-            add2methods: function () {
-                var fname = "a";
-                this.button_num1 += 2;
-                this.$emit('calculate', fname, this.button_num1)
-            },
-            add3methods: function () {
-                var fname2 = "b";
-                this.button_num2 += 3;
-                this.$emit('calculate', fname2, this.button_num2)
-            },
-            onInput:function (event) {
-                this.$emit('input',event.target.value);
-                this.$emit('calculate', "c", event.target.value)
-            }
-        }
 
-    })
-    var vm = new Vue({
-        el: "#example",
-        data: {
-            message:0,
-            result: 0,
-            a: 0,
-            b: 0,
-            c: 0
-        },
-        methods: {
-            calNum: function (name, val) {
-                if (name == "a") {
-                    this.a = val
-                } else if (name == "b") {
-                    this.b = val
-                }else if (name == "c") {
-                    this.c = val
-                }
-                console.log(this.c)
-                this.result =  this.a*this.b+ parseInt(this.c)
-            }
+<script>
+    Vue.component('jsx-example', {
+        render (h) { // <-- h must be in scope
+            return <div id="foo">bar</div>
         }
     })
+var vm = new Vue({
+    el:'.div'
+})
 </script>
 </body>
+
+
 </html>

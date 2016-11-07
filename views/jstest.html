@@ -6,46 +6,31 @@
     <!--<script src='../public/javascripts/vue.js'></script>-->
     <script src="../node_modules/vue/dist/vue.js"></script>
     <style>
-        .active {
-            color: blue;
-        }
+       html, body{
+           margin:0;
+           padding:0;
+       }
+       .box{
+           display: flex;
+           justify-content: center;
+           background: #0099cc;
+           height: 1000px;
+       }
+       .text-box{
+           font-size: 1rem;
+           padding: 1rem;
+           border: 1px dashed #FFF;
+           color: #FFF;
+           font-weight: normal;
+       }
     </style>
 </head>
 <body>
-<div id="v-model-example">
-    <p>{{ message }}</p>
-    <my-input
-            label="Message"
-            v-model="message"
-    ></my-input>
+<div class="box">
+
+    <div class="text-box">flex弹性布局justify-content属性实现元素水平居中</div>
 </div>
-<script>
-    Vue.component('my-input', {
-        template: '\
-    <div class="form-group">\
-      <label v-bind:for="randomId">{{ label }}:</label>\
-      <input v-bind:id="randomId" v-bind:value="value" v-on:input="onInput">\
-    </div>\
-  ',
-        props: ['value', 'label'],
-        data: function () {
-            return {
-                randomId: 'input-' + Math.random()
-            }
-        },
-        methods: {
-            onInput: function (event) {
-                console.log(event.target.value)
-                this.$emit('input', event.target.value)
-            }
-        },
-    })
-    new Vue({
-        el: '#v-model-example',
-        data: {
-            message: 'hello'
-        }
-    })
-</script>
+
 </body>
+
 </html>
