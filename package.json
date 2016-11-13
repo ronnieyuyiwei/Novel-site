@@ -1,7 +1,7 @@
 {
   "name": "Andromeda",
   "author": "Ronnieyuyiwei",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
@@ -20,12 +20,29 @@
     "pug": "^2.0.0-beta3",
     "serve-favicon": "~2.3.0",
     "vue": "^2.0.3",
-    "vue-resource": "^0.9.3",
     "webpack": "^1.13.3"
   },
   "devDependencies": {
-    "babel-helper-vue-jsx-merge-props": "^2.0.2",
-    "babel-plugin-syntax-jsx": "^6.18.0",
-    "babel-plugin-transform-vue-jsx": "^3.1.2"
+    "assert": "^1.4.1",
+    "body-parser": "~1.15.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
+    "events": "^1.1.1",
+    "express": "~4.13.4",
+    "express-session": "^1.14.0",
+    "mongodb": "^2.1.18",
+    "mongoose": "^4.5.9",
+    "morgan": "~1.7.0",
+    "pug": "^2.0.0-beta3",
+    "serve-favicon": "~2.3.0",
+    "vue": "^2.0.3",
+    "webpack": "^1.13.3",
+    "css-loader": "^0.25.0",
+    "file-loader": "^0.9.0",
+    "html-loader": "^0.4.4",
+    "node-sass": "^3.11.2",
+    "sass-loader": "^4.0.2",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7"
   }
 }

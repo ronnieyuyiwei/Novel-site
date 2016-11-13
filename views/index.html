@@ -5,26 +5,13 @@
     <title>Webpack Sample Project</title>
     <!--<script src='../public/javascripts/vue.js'></script>-->
     <script src="../node_modules/vue/dist/vue.js"></script>
-
+    <script src="../build/bundle.js"></script>
     <style>
 
     </style>
 </head>
 <body>
-<div class="div">
-   <jsx-example></jsx-example>
-</div>
-
-<script>
-    Vue.component('jsx-example', {
-        render (h) { // <-- h must be in scope
-            return <div id="foo">bar</div>
-        }
-    })
-var vm = new Vue({
-    el:'.div'
-})
-</script>
+<div class="hello"> this is hello div</div>
 </body>
 
 

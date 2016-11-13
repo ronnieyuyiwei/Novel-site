@@ -4,20 +4,22 @@
 var webpack = require('webpack');
 
 module.exports = {
-    devtool: 'source-map',
+    // devtool: 'source-map',
     entry: __dirname + "/app/main.js",
     output: {
         path: __dirname + "/build",
         filename: "bundle.js"
     },
-  
-    loaders: [
-        // {
-        //     test: /\.scss$/,
-        //     loader: "style!css!sass"
-        // }
-    ]
-    // ,
+
+    module: {
+        loaders: [
+            {test: /\.js$/, loader: "babel"},
+            {test: /\.css$/, loader: "style!css"},
+            {test: /\.(jpg|png)$/, loader: "url?limit=8192"},
+            {test: /\.scss$/, loader: "style!css!sass"}
+        ]
+    }
+    //
     //
     // module: {
     //     loaders: [
