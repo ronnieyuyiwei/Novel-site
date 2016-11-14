@@ -1,53 +1,47 @@
 /**
  * Created by YYW on 2016/10/27.
  */
-var webpack = require('webpack');
 
+// webpack.config.js
+var path = require('path');
+var webpack = require('webpack');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var extractCSS = new ExtractTextPlugin('qwert.css');
 module.exports = {
-    // devtool: 'source-map',
     entry: __dirname + "/app/main.js",
     output: {
         path: __dirname + "/build",
         filename: "bundle.js"
     },
+    plugins: [
+        new webpack.optimize.UglifyJsPlugin({
+            compressor: {
+                warnings: false,
+            },
 
+        }),
+        extractCSS
+    ],
     module: {
         loaders: [
-            {test: /\.js$/, loader: "babel"},
-            {test: /\.css$/, loader: "style!css"},
-            {test: /\.(jpg|png)$/, loader: "url?limit=8192"},
-            {test: /\.scss$/, loader: "style!css!sass"}
-        ]
-    }
-    //
-    //
-    // module: {
-    //     loaders: [
-    //         {
-    //             test: /\.json$/,
-    //             loader: "json"
-    //         },
-    //         {
-    //             test: /\.js$/,
-    //             exclude: /node_modules/,
-    //             loader: 'babel'
-    //         },
-    //         {
-    //             test: /\.css$/,
-    //             loader: ExtractTextPlugin.extract('style', 'css?modules!postcss')
-    //         }
-    //     ]
-    // },
-    // postcss: [
-    //     require('autoprefixer')
-    // ],
-    //
-    // plugins: [
-    //     new HtmlWebpackPlugin({
-    //         template: __dirname + "/app/index.tmpl.html"
-    //     }),
-    //     new webpack.optimize.OccurenceOrderPlugin(),
-    //     new webpack.optimize.UglifyJsPlugin(),
-    //     new ExtractTextPlugin("[name]-[hash].css")
-    // ]
+            {
+            test: /\.css$/,
+            loader: ExtractTextPlugin.extract("style-loader", "css-loader")
+            },
+            {
+                test: /\.(png|jpg)$/,
+                loaders: [
+                    'file?hash=sha512&digest=hex&name=[hash].[ext]',
+                    'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
+                ]
+            },
+            {
+
+                test: /\.scss$/,
+                loader: extractCSS.extract(['css','sass'])
+                // loader: "style!css!sass",
+            }
+            ]
+    },
+
 }
