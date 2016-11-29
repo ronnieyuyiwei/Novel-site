@@ -6,11 +6,11 @@
 var path = require('path');
 var webpack = require('webpack');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
-var extractCSS = new ExtractTextPlugin('qwert.css');
+// var extractCSS = new ExtractTextPlugin('../stylesheets/qwert.css');
 module.exports = {
     entry: __dirname + "/app/main.js",
     output: {
-        path: __dirname + "/build",
+        path: __dirname + "/public/build",
         filename: "bundle.js"
     },
     plugins: [
@@ -20,28 +20,37 @@ module.exports = {
             },
 
         }),
-        extractCSS
+        new ExtractTextPlugin('../stylesheets/css/qwert.css', {
+            allChunks: true,
+        }),
+        // ,
+        // extractCSS
     ],
     module: {
         loaders: [
+            { test: /\.vue$/, loader: 'vue' },
             {
-            test: /\.css$/,
-            loader: ExtractTextPlugin.extract("style-loader", "css-loader")
+                test: /\.css$/,
+                loader: ExtractTextPlugin.extract('style-loader', 'css-loader'),
             },
             {
-                test: /\.(png|jpg)$/,
-                loaders: [
-                    'file?hash=sha512&digest=hex&name=[hash].[ext]',
-                    'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
-                ]
-            },
-            {
-
                 test: /\.scss$/,
-                loader: extractCSS.extract(['css','sass'])
-                // loader: "style!css!sass",
-            }
+                loader: ExtractTextPlugin.extract('style-loader', 'css-loader!sass-loader'),
+            },
+            {//es6的加载器
+                test:/.js$/,
+                loader: 'babel-loader',
+                exclude:"/node_modules/"
+            },
+            { test: /\.(html|tpl)$/, loader: 'html-loader' }
             ]
     },
+    vue: {
+        loaders: {
+            css: 'style!css!autoprefixer',
+            html:'vue-html-loader',
+            scss:'style!css!sass'
+        }
+    }
 
-}
+};

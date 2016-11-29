@@ -2,15 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Webpack Sample Project</title>
-    <!--<script src='../public/javascripts/vue.js'></script>-->
+    <!--<title>Webpack Sample Project</title>-->
+    <!--&lt;!&ndash;<script src='../public/javascripts/vue.js'></script>&ndash;&gt;-->
     <script src="../node_modules/vue/dist/vue.js"></script>
-    <script src="../build/bundle.js"></script>
-
+    <script src="../public/build/bundle.js"></script>
+    <!--<script src="../public/stylesheets/qwert.css"></script>-->
+    <!--<script src="../public/javascripts/test.js"></script>-->
 </head>
 <body>
-<div class="hello"> this is hello div</div>
+
+<div id="hello">
+    <anchored-heading :level="1">Hello world!!</anchored-heading>
+</div>
+
+
 </body>
+
+<script>
+    var vm = new Vue({
+        el:"#hello"
+    })
+</script>
 
 
 </html>
