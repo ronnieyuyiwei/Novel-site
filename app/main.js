@@ -13,7 +13,5 @@
 // import '../public/javascripts/test'
 import Vue from "../node_modules/vue/dist/vue.min";
 import app from '../public/components/app.vue';
-
-Vue.config.debug = true;//开启错误提示
+new Vue(app)
 export default {app}
- new Vue(app);
