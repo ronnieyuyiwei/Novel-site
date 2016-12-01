@@ -12,6 +12,8 @@
 // import '../public/javascripts/ES6'
 // import '../public/javascripts/test'
 import Vue from "../node_modules/vue/dist/vue.min";
-import app from '../public/components/app.vue';
-new Vue(app)
-export default {app}
+import App from '../public/components/app.vue';
+new Vue({
+    el: '#app',
+    render: h => h(App)
+})
