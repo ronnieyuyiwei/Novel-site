@@ -2,27 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <!--<title>Webpack Sample Project</title>-->
-    <!--&lt;!&ndash;<script src='../public/javascripts/vue.js'></script>&ndash;&gt;-->
-    <script src="../node_modules/vue/dist/vue.js"></script>
-    <script src="../public/build/bundle.js"></script>
-    <!--<script src="../public/stylesheets/qwert.css"></script>-->
-    <!--<script src="../public/javascripts/test.js"></script>-->
+    <script src="../node_modules/vue/dist/vue.min.js"></script>
+    <script src="../node_modules/vue-router/dist/vue-router.js"></script>
 </head>
 <body>
-
-<div id="hello">
-    <anchored-heading :level="1">Hello world!!</anchored-heading>
+<div id="app">
+    <h1>Hello App!</h1>
+    <p>
+        <!-- 使用 router-link 组件来导航. -->
+        <!-- 通过传入 `to` 属性指定链接. -->
+        <!-- <router-link> 默认会被渲染成一个 `<a>` 标签 -->
+        <router-link to="/foo">Go to Foo</router-link>
+        <router-link to="/bar">Go to Bar</router-link>
+    </p>
+    <!-- 路由出口 -->
+    <!-- 路由匹配到的组件将渲染在这里 -->
+    <router-view></router-view>
 </div>
-
-
 </body>
-
-<script>
-    var vm = new Vue({
-        el:"#hello"
-    })
-</script>
-
-
+<script src="../src/build/bundle.js"></script>
 </html>
